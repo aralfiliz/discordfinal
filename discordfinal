@@ -1,0 +1,59 @@
+import discord
+from discord.ext import commands
+import random 
+
+a= ("zeki")
+b= ("beyin yok")
+c= ("ayınştayn")
+d= ("ne bilem")
+e= ("Ronaldo")
+f= ("Messi")
+g= ("Sabri Sarıoğlu")
+h= ("ayaksızzz")
+
+intents = discord.Intents.all()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'We have logged in as {bot.user}')
+
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send(f'Hi! ben bir iklim koruyucusuyum. {bot.user}!')
+
+@bot.command()
+async def iklim(ctx):
+    await ctx.send(f'Daha geniş anlamda iklim değişikliği, Dünyanın iklimindeki önceki uzun vadeli değişiklikleri de içerir. Küresel ortalama sıcaklıktaki mevcut artış, önceki değişikliklerden daha hızlıdır ve esas olarak insanların fosil yakıtları yakmasından kaynaklanmaktadır.[4][5] Fosil yakıt kullanımı, ormansızlaşma ve bazı tarımsal ve endüstriyel uygulamalar, başta karbondioksit ve metan olmak üzere sera gazlarını artırmaktadır.[6] Sera gazları, Dünyanın güneş ışığından ısındıktan sonra yaydığı ısının bir kısmını emer. Bu gazların daha büyük miktarları Dünyanın alt atmosferinde daha fazla ısı tutarak küresel ısınmaya neden olur. İklim koruyucusu olmak ister misin?')
+
+@bot.command()
+async def iklimsite(ctx):
+    await ctx.send(f'İklim ile ilgili her şeyi öğrenmek istiyorsan: https://tr.wikipedia.org/wiki/%C4%B0klim')
+
+@bot.command()
+async def iklimfoto(ctx):
+    await ctx.send(f'İklim değişikliği fotoğraflarını görmek istiyorsan: https://www.istockphoto.com/tr/foto%C4%9Fraflar/iklim-de%C4%9Fi%C5%9Fikli%C4%9Fi')
+
+@bot.command()
+async def iklimvideo(ctx):
+    await ctx.send(f'İklim değişikliği ile ilgili video istiyorsan: https://www.youtube.com/watch?v=aGYjEyHBUTA')
+
+@bot.command()
+async def test(ctx):
+    await ctx.send(f'Ne testi yapmak istiyorsun: 1.ZEKİLİK  2.FUTBOLCULUK')
+    if input == 1:
+        await ctx.send(random.randint(a,b,c,d))
+    
+    if input == 2:
+        await ctx.send(random.randint(e,f,g,h))
+
+@bot.command()
+async def prenses(ctx):
+    await ctx.send(f"Dünyanın en güzel prensesinin fotosu:")
+
+
+bot.run("YOUR_TOKEN")
+
